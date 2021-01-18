@@ -42,15 +42,17 @@ public class BackgroundWorker extends AsyncTask {
     private TextView mainColorE;
     private View mainView;
     private TextView subText;
+    private TextView subPar;
     private ProgressDialog dialog;
     private Context context;
 
-    BackgroundWorker(Context context, TextView mainColor, View mainView, TextView subText, ProgressDialog dialog) {
+    BackgroundWorker(Context context, TextView mainColor, View mainView, TextView subText, ProgressDialog dialog, TextView subPar) {
         this.context = context;
         mainColorE = mainColor;
         this.mainView = mainView;
         this.subText = subText;
         this.dialog = dialog;
+        this.subPar = subPar;
     }
 
     @Override
@@ -90,6 +92,7 @@ public class BackgroundWorker extends AsyncTask {
             case "Zona Gialla":
                 mainView.setBackgroundColor(Color.parseColor("#fdd835"));
                 subText.setText(R.string.cosaG);
+                subPar.setText(R.string.amiciG);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     Activity act = (Activity) context;
                     Window window = act.getWindow();
@@ -101,6 +104,7 @@ public class BackgroundWorker extends AsyncTask {
             case "Zona Arancione":
                 mainView.setBackgroundColor(Color.parseColor("#fb8c00"));
                 subText.setText(R.string.cosaA);
+                subPar.setText(R.string.amiciA);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     Activity act = (Activity) context;
                     Window window = act.getWindow();
@@ -112,6 +116,7 @@ public class BackgroundWorker extends AsyncTask {
             case "Zona Rossa":
                 mainView.setBackgroundColor(Color.parseColor("#d32f2f"));
                 subText.setText(R.string.cosaR);
+                subPar.setText(R.string.amiciA);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     Activity act = (Activity) context;
                     Window window = act.getWindow();
@@ -120,6 +125,7 @@ public class BackgroundWorker extends AsyncTask {
                 }
                 mainColorE.setTextColor(Color.WHITE);
                 subText.setTextColor(Color.WHITE);
+                subPar.setTextColor(Color.WHITE);
                 dialog.dismiss();
                 break;
             default:
