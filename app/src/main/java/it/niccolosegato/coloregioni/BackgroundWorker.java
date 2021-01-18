@@ -1,13 +1,18 @@
 package it.niccolosegato.coloregioni;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import org.apache.http.HttpResponse;
@@ -37,11 +42,15 @@ public class BackgroundWorker extends AsyncTask {
     private TextView mainColorE;
     private View mainView;
     private TextView subText;
+    private ProgressDialog dialog;
+    private Context context;
 
-    BackgroundWorker(Context context, TextView mainColor, View mainView, TextView subText) {
+    BackgroundWorker(Context context, TextView mainColor, View mainView, TextView subText, ProgressDialog dialog) {
+        this.context = context;
         mainColorE = mainColor;
         this.mainView = mainView;
         this.subText = subText;
+        this.dialog = dialog;
     }
 
     @Override
@@ -79,20 +88,44 @@ public class BackgroundWorker extends AsyncTask {
         mainColorE.setText(result.toString());
         switch (result.toString()){
             case "Zona Gialla":
-                mainView.setBackgroundColor(Color.YELLOW);
+                mainView.setBackgroundColor(Color.parseColor("#fdd835"));
                 subText.setText(R.string.cosaG);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    Activity act = (Activity) context;
+                    Window window = act.getWindow();
+                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                    window.setStatusBarColor(Color.parseColor("#c6a700"));
+                }
+                dialog.dismiss();
                 break;
             case "Zona Arancione":
-                mainView.setBackgroundColor(Color.GREEN);
+                mainView.setBackgroundColor(Color.parseColor("#fb8c00"));
                 subText.setText(R.string.cosaA);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    Activity act = (Activity) context;
+                    Window window = act.getWindow();
+                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                    window.setStatusBarColor(Color.parseColor("#c25e00"));
+                }
+                dialog.dismiss();
                 break;
             case "Zona Rossa":
-                mainView.setBackgroundColor(Color.RED);
+                mainView.setBackgroundColor(Color.parseColor("#d32f2f"));
                 subText.setText(R.string.cosaR);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    Activity act = (Activity) context;
+                    Window window = act.getWindow();
+                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                    window.setStatusBarColor(Color.parseColor("#9a0007"));
+                }
+                mainColorE.setTextColor(Color.WHITE);
+                subText.setTextColor(Color.WHITE);
+                dialog.dismiss();
                 break;
             default:
                 mainView.setBackgroundColor(Color.WHITE);
                 subText.setText(R.string.cosaE);
+                dialog.dismiss();
                 break;
         }
     }
