@@ -1,3 +1,4 @@
+![alt text](https://github.com/NiccoloSegato/coloregioni/blob/main/image.jpg?raw=true)
 # Colore Regioni
 Applicazione Android che notifica e informa gli utenti del colore della propria regione italiana relativo ai DPCM durante la pandemia da COVID-19.
 
