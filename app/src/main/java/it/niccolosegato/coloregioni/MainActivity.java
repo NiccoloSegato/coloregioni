@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -34,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     protected TextView mainText;
     protected TextView subText;
 
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("coloregioni", 0); // 0 - for private mode
         String regionePref = pref.getString("REGIONE", "Abruzzo");
+
+        mAdView = findViewById(R.id.adView);
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         regioneBtn = (Button) findViewById(R.id.regione);
         mainView = (View) findViewById(R.id.mainView);
@@ -59,6 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
     protected void changeColor(String regione){
         subText.setText(regione);
-        new BackgroundWorker(this, mainText, mainView).execute(regione);
+        new BackgroundWorker(this, mainText, mainView, subText).execute(regione);
     }
 }

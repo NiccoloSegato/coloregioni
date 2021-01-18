@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">coloregioni</string>
+    <string name="app_name">Colore Regioni</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6620343870941775/7486091241</string>
+    <string name="cosaG">Cosa posso fare?\nIIn zona gialla è possibile</string>
+    <string name="cosaA">Cosa posso fare?\nTest</string>
+    <string name="cosaR">Cosa posso fare?\nTest</string>
+    <string name="cosaE">Cosa posso fare?\nTest</string>
 </resources>

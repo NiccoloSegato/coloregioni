@@ -7,6 +7,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.prefs.Preferences;
 
 public class RegionActivity extends AppCompatActivity {
@@ -62,8 +65,6 @@ public class RegionActivity extends AppCompatActivity {
         umbria = (Button) findViewById(R.id.umbria);
         valle = (Button) findViewById(R.id.valle);
         veneto = (Button) findViewById(R.id.veneto);
-
-
 
         abruzzo.setOnClickListener(v -> {
             editor.putString("REGIONE", "Abruzzo");

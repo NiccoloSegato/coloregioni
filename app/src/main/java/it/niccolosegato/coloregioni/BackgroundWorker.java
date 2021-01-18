@@ -36,10 +36,12 @@ public class BackgroundWorker extends AsyncTask {
 
     private TextView mainColorE;
     private View mainView;
+    private TextView subText;
 
-    BackgroundWorker(Context context, TextView mainColor, View mainView) {
+    BackgroundWorker(Context context, TextView mainColor, View mainView, TextView subText) {
         mainColorE = mainColor;
         this.mainView = mainView;
+        this.subText = subText;
     }
 
     @Override
@@ -78,15 +80,19 @@ public class BackgroundWorker extends AsyncTask {
         switch (result.toString()){
             case "Zona Gialla":
                 mainView.setBackgroundColor(Color.YELLOW);
+                subText.setText(R.string.cosaG);
                 break;
             case "Zona Arancione":
                 mainView.setBackgroundColor(Color.GREEN);
+                subText.setText(R.string.cosaA);
                 break;
             case "Zona Rossa":
                 mainView.setBackgroundColor(Color.RED);
+                subText.setText(R.string.cosaR);
                 break;
             default:
                 mainView.setBackgroundColor(Color.WHITE);
+                subText.setText(R.string.cosaE);
                 break;
         }
     }
