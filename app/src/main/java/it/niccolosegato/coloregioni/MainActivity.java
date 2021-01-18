@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -34,6 +35,8 @@ import java.util.prefs.Preferences;
 public class MainActivity extends AppCompatActivity {
 
     protected Button regioneBtn;
+    protected Button dwnBtn;
+    protected Button faqBtn;
     protected View mainView;
     protected TextView mainText;
     protected TextView subText;
@@ -56,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         mAdView.loadAd(adRequest);
 
         regioneBtn = (Button) findViewById(R.id.regione);
+        dwnBtn = (Button) findViewById(R.id.dwn);
+        faqBtn = (Button) findViewById(R.id.faq);
         mainView = (View) findViewById(R.id.mainView);
         mainText = (TextView) findViewById(R.id.mainColor);
         subText = (TextView) findViewById(R.id.cosaFare);
@@ -64,6 +69,16 @@ public class MainActivity extends AppCompatActivity {
         regioneBtn.setOnClickListener(v -> {
             Intent intent = new Intent(getBaseContext(), RegionActivity.class);
             startActivity(intent);
+        });
+
+        dwnBtn.setOnClickListener(v -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.interno.gov.it/sites/default/files/2020-10/modello_autodichiarazione_editabile_ottobre_2020.pdf"));
+            startActivity(browserIntent);
+        });
+
+        faqBtn.setOnClickListener(v -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.governo.it/it/articolo/domande-frequenti-sulle-misure-adottate-dal-governo/15638"));
+            startActivity(browserIntent);
         });
 
 
