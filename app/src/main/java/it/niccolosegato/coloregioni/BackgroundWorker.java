@@ -4,8 +4,10 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import org.apache.http.HttpResponse;
@@ -33,9 +35,11 @@ import it.niccolosegato.coloregioni.R;
 public class BackgroundWorker extends AsyncTask {
 
     private TextView mainColorE;
+    private View mainView;
 
-    BackgroundWorker(Context context, TextView mainColor) {
+    BackgroundWorker(Context context, TextView mainColor, View mainView) {
         mainColorE = mainColor;
+        this.mainView = mainView;
     }
 
     @Override
@@ -71,5 +75,19 @@ public class BackgroundWorker extends AsyncTask {
     @Override
     protected void onPostExecute(Object result) {
         mainColorE.setText(result.toString());
+        switch (result.toString()){
+            case "Zona Gialla":
+                mainView.setBackgroundColor(Color.YELLOW);
+                break;
+            case "Zona Arancione":
+                mainView.setBackgroundColor(Color.GREEN);
+                break;
+            case "Zona Rossa":
+                mainView.setBackgroundColor(Color.RED);
+                break;
+            default:
+                mainView.setBackgroundColor(Color.WHITE);
+                break;
+        }
     }
 }

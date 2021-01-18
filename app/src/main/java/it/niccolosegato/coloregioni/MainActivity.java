@@ -3,6 +3,8 @@ package it.niccolosegato.coloregioni;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,7 +29,7 @@ import java.util.prefs.Preferences;
 
 public class MainActivity extends AppCompatActivity {
 
-    protected Button regione;
+    protected Button regioneBtn;
     protected View mainView;
     protected TextView mainText;
     protected TextView subText;
@@ -37,20 +39,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Preferences prefs = Preferences.userNodeForPackage(it.niccolosegato.coloregioni.MainActivity.class);
-        String regionePref = prefs.get("REGIONE", "Abruzzo");
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("coloregioni", 0); // 0 - for private mode
+        String regionePref = pref.getString("REGIONE", "Abruzzo");
 
-        regione = (Button) findViewById(R.id.regione);
+        regioneBtn = (Button) findViewById(R.id.regione);
         mainView = (View) findViewById(R.id.mainView);
         mainText = (TextView) findViewById(R.id.mainColor);
         subText = (TextView) findViewById(R.id.cosaFare);
-        regione.setText(regionePref);
+        regioneBtn.setText(regionePref);
+
+        regioneBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(getBaseContext(), RegionActivity.class);
+            startActivity(intent);
+        });
+
 
         changeColor(regionePref);
     }
 
     protected void changeColor(String regione){
         subText.setText(regione);
-        new BackgroundWorker(this, mainText).execute(regione);
+        new BackgroundWorker(this, mainText, mainView).execute(regione);
     }
 }
