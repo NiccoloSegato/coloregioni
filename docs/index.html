@@ -12,6 +12,21 @@
                 height: 600px;
                 object-fit: cover;
             }
+            .other {
+                width: 100%;
+                border-radius: 20px;
+                border: 1px solid rgb(192, 192, 192);
+                margin-bottom: 30px;
+                padding: 10px 20px;
+
+            }
+            .other a {
+                background-color: rgb(219, 56, 56);
+                border-radius: 20px;
+                text-decoration: none;
+                color: white;
+                padding: 2px 20px;
+            }
             @media screen and (max-width: 1250px) {
                 #bigimg {
                     height: 200px;
@@ -35,11 +50,24 @@
         <h1 style="text-align: center;font-size: 4rem; font-weight: 700; margin-top: 30px;">Scarica ora</h1>
         <h3 style="text-align: center;">E' gratuita, è sicura</h3>
         <a style="margin: auto; width: wrap-content; display: flex; justify-content: center;" href="https://play.google.com/store/apps/details?id=it.niccolosegato.coloregioni&hl=it&gl=IT" title="Colore Regioni su Play Store">
-            <img src="./google-play-badge.png" alt="Scarica dal Play Store per Android" style="width: 300px; height: auto;">
+            <img src="./google-play-badge.png" alt="Scarica dal Play Store per Android" style="width: 200px; height: auto;">
         </a>
+        <div style="display: flex; justify-content: center; flex-direction: column; margin: auto; width: calc(100% - 44px);max-width: 400px; margin-top: 70px;">
+            <h1 style="text-align: center; margin-bottom: 30px;">Altri miei progetti</h1>
+            <div class="other">
+                <img src="https://raw.githubusercontent.com/NiccoloSegato/polireplay/main/assets/images/logo.png?token=AF7J2P3PTA3EN4BCWWYNO3TACHFZY" alt="PoliReplay" width="100px">
+                <p>Riguarda le lezioni del Politecnico di Milano</p>
+                <a href="https://polireplay.it" title="PoliReplay" target="_blank">Visita</a>
+            </div>
+            <div class="other">
+                <img src="data:image/png;base64,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" width="100px" alt="Voolo">
+                <p>Trova le esperienze di volontariato a Bologna</p>
+                <a href="https://voolo.net" title="Voolo" target="_blank">Visita</a>
+            </div>
+        </div>
           
 
-        <p style="margin-top: 100px; margin-left: 24px; padding-bottom: 0; margin-bottom: 0;">Google Play e Google Play logo sono marchi registrati di Google LLC.</p>
+        <p style="margin-top: 50px; margin-left: 24px; padding-bottom: 0; margin-bottom: 0;">Google Play e Google Play logo sono marchi registrati di Google LLC.</p>
         <p style="margin-top: 0; margin-left: 24px; padding-top: 0;">© Niccolò Segato 2021 - Tutti i diritti riservati</p>
     </body>
 </html>
