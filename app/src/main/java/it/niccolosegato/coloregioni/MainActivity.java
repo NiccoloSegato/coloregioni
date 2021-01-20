@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     protected TextView mainText;
     protected TextView subText;
     protected TextView subPar;
+    protected TextView textView;
+    protected TextView textView2;
 
     ProgressDialog dialog;
 
@@ -66,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         mainText = (TextView) findViewById(R.id.mainColor);
         subText = (TextView) findViewById(R.id.cosaFare);
         subPar = (TextView) findViewById(R.id.subCosa);
+        textView = (TextView) findViewById(R.id.textView);
+        textView2 = (TextView) findViewById(R.id.textView2);
         regioneBtn.setText(regionePref);
 
         regioneBtn.setOnClickListener(v -> {
@@ -90,6 +94,6 @@ public class MainActivity extends AppCompatActivity {
     protected void changeColor(String regione){
         dialog = ProgressDialog.show(this, "Attendi un attimo", "Sto scaricando i dati più aggiornati...");
         subText.setText(regione);
-        new BackgroundWorker(this, mainText, mainView, subText, dialog, subPar).execute(regione);
+        new BackgroundWorker(this, mainText, mainView, subText, dialog, subPar, textView, textView2).execute(regione);
     }
 }

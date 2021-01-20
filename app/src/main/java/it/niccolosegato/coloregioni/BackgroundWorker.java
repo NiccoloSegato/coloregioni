@@ -45,14 +45,18 @@ public class BackgroundWorker extends AsyncTask {
     private TextView subPar;
     private ProgressDialog dialog;
     private Context context;
+    private TextView textView;
+    private TextView textView2;
 
-    BackgroundWorker(Context context, TextView mainColor, View mainView, TextView subText, ProgressDialog dialog, TextView subPar) {
+    BackgroundWorker(Context context, TextView mainColor, View mainView, TextView subText, ProgressDialog dialog, TextView subPar , TextView textView, TextView textView2) {
         this.context = context;
         mainColorE = mainColor;
         this.mainView = mainView;
         this.subText = subText;
         this.dialog = dialog;
         this.subPar = subPar;
+        this.textView = textView;
+        this.textView2 = textView2;
     }
 
     @Override
@@ -126,6 +130,8 @@ public class BackgroundWorker extends AsyncTask {
                 mainColorE.setTextColor(Color.WHITE);
                 subText.setTextColor(Color.WHITE);
                 subPar.setTextColor(Color.WHITE);
+                textView.setTextColor(Color.WHITE);
+                textView2.setTextColor(Color.WHITE);
                 dialog.dismiss();
                 break;
             default:
