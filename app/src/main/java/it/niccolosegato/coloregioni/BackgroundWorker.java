@@ -103,6 +103,11 @@ public class BackgroundWorker extends AsyncTask {
                     window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                     window.setStatusBarColor(Color.parseColor("#c6a700"));
                 }
+                mainColorE.setTextColor(Color.BLACK);
+                subText.setTextColor(Color.BLACK);
+                subPar.setTextColor(Color.BLACK);
+                textView.setTextColor(Color.BLACK);
+                textView2.setTextColor(Color.BLACK);
                 dialog.dismiss();
                 break;
             case "Zona Arancione":
@@ -115,6 +120,11 @@ public class BackgroundWorker extends AsyncTask {
                     window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                     window.setStatusBarColor(Color.parseColor("#c25e00"));
                 }
+                mainColorE.setTextColor(Color.BLACK);
+                subText.setTextColor(Color.BLACK);
+                subPar.setTextColor(Color.BLACK);
+                textView.setTextColor(Color.BLACK);
+                textView2.setTextColor(Color.BLACK);
                 dialog.dismiss();
                 break;
             case "Zona Rossa":
@@ -137,6 +147,11 @@ public class BackgroundWorker extends AsyncTask {
             default:
                 mainView.setBackgroundColor(Color.WHITE);
                 subText.setText(R.string.cosaE);
+                mainColorE.setTextColor(Color.BLACK);
+                subText.setTextColor(Color.BLACK);
+                subPar.setTextColor(Color.BLACK);
+                textView.setTextColor(Color.BLACK);
+                textView2.setTextColor(Color.BLACK);
                 dialog.dismiss();
                 break;
         }
