@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <title>Colore Regioni COVID</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            body {
+                background-color: #FF5733;
+                color: white;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            #zonaLbl {
+                margin-left: 18px;
+                font-size: 40px;
+                margin-top: 35px;
+            }
+            #regioni {
+                -webkit-appearance: none;
+                padding: 15px 20px;
+                font-size: 16px;
+                font-weight: bold;
+                border: none;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                margin-top: 50px;
+                margin-left: 18px ;
+                background-color: white;
+            }
+            #cosaLbl {
+                padding-left: 18px;
+                padding-right: 18px;
+                margin-top: 0;
+                padding-top: 6px;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+            #divider {
+                background-color: white;
+                width: calc(100% - 54px);
+                height: 2px;
+                margin-left: 18px;
+            }
+            #download {
+                width: 250px;
+                height: auto;
+            }
+        </style>
+        <script>
+            function changeColor(caller) {
+                switch (caller.value) {
+                    case 'Abruzzo':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Arancione'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FF5733'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Basilicata':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Gialla'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona gialla è possibile circolare all\'interno della propria regione senza limitazioni.\nLe attività commerciali, compresi bar e ristoranti sono aperti. C\'è il divieto di circolazione tra le 22 e le 5. Non è possibile uscire dalla propria regione.'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FFC300'
+                        document.getElementsByTagName("BODY")[0].style.color = 'black'
+                        break;
+                    case 'Calabria':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Arancione'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FF5733'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Campania':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Gialla'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona gialla è possibile circolare all\'interno della propria regione senza limitazioni.\nLe attività commerciali, compresi bar e ristoranti sono aperti. C\'è il divieto di circolazione tra le 22 e le 5. Non è possibile uscire dalla propria regione.'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FFC300'
+                        document.getElementsByTagName("BODY")[0].style.color = 'black'
+                        break;
+                    case 'Emilia-Romagna':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Arancione'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FF5733'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Friuli Venezia-Giulia':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Arancione'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FF5733'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Lazio':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Arancione'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FF5733'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Lombardia':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Arancione'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FF5733'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Marche':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Arancione'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FF5733'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Molise':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Gialla'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona gialla è possibile circolare all\'interno della propria regione senza limitazioni.\nLe attività commerciali, compresi bar e ristoranti sono aperti. C\'è il divieto di circolazione tra le 22 e le 5. Non è possibile uscire dalla propria regione.'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FFC300'
+                        document.getElementsByTagName("BODY")[0].style.color = 'black'
+                        break;
+                    case 'Piemonte':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Arancione'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FF5733'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Puglia':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Arancione'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FF5733'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Sardegna':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Arancione'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FF5733'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Sicilia':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Rossa'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona rossa non è consentito circolare, nemmeno all\'interno del proprio comune. Negozi, bar e ristoranti sono chiusi. Questi ultimi hanno la possibilità di fare asporto e consegne a domicilio'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#C70039'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Toscana':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Gialla'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona gialla è possibile circolare all\'interno della propria regione senza limitazioni.\nLe attività commerciali, compresi bar e ristoranti sono aperti. C\'è il divieto di circolazione tra le 22 e le 5. Non è possibile uscire dalla propria regione.'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FFC300'
+                        document.getElementsByTagName("BODY")[0].style.color = 'black'
+                        break;
+                    case 'Provincia autonoma di Trento':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Gialla'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona gialla è possibile circolare all\'interno della propria regione senza limitazioni.\nLe attività commerciali, compresi bar e ristoranti sono aperti. C\'è il divieto di circolazione tra le 22 e le 5. Non è possibile uscire dalla propria regione.'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FFC300'
+                        document.getElementsByTagName("BODY")[0].style.color = 'black'
+                        break;
+                    case 'Provincia autonoma di Bolzano':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Rossa'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona rossa non è consentito circolare, nemmeno all\'interno del proprio comune. Negozi, bar e ristoranti sono chiusi. Questi ultimi hanno la possibilità di fare asporto e consegne a domicilio'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#C70039'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Umbria':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Arancione'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FF5733'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Valle d\'Aosta':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Arancione'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FF5733'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    case 'Veneto':
+                        document.getElementById('zonaLbl').innerHTML = 'Zona Arancione'
+                        document.getElementById('cosaLbl').innerHTML = 'In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti'
+                        document.getElementsByTagName("BODY")[0].style.backgroundColor = '#FF5733'
+                        document.getElementsByTagName("BODY")[0].style.color = 'white'
+                        break;
+                    default:
+                        break;
+                }
+            }
+        </script>
+    </head>
+    <body>
+
+        <select name="regioni" id="regioni" onchange="changeColor(this)">
+            <option value="Abruzzo">Abruzzo</option>
+            <option value="Basilicata">Basilicata</option>
+            <option value="Calabria">Calabria</option>
+            <option value="Campania">Campania</option>
+            <option value="Emilia-Romagna">Emilia-Romagna</option>
+            <option value="Friuli Venezia-Giulia">Friuli Venezia-Giulia</option>
+            <option value="Lazio">Lazio</option>
+            <option value="Liguria">Liguria</option>
+            <option value="Lombardia">Lombardia</option>
+            <option value="Marche">Marche</option>
+            <option value="Molise">Molise</option>
+            <option value="Piemonte">Piemonte</option>
+            <option value="Puglia">Puglia</option>
+            <option value="Sardegna">Sardegna</option>
+            <option value="Sicilia">Sicilia</option>
+            <option value="Toscana">Toscana</option>
+            <option value="Provincia autonoma di Trento">Provincia autonoma di Trento</option>
+            <option value="Provincia autonoma di Bolzano">Provincia autonoma di Bolzano</option>
+            <option value="Umbria">Umbria</option>
+            <option value="Valle d'Aosta">Valle d'Aosta</option>
+            <option value="Veneto">Veneto</option>
+        </select>
+          
+        <h1 id="zonaLbl">Zona Arancione</h1>
+
+        <div id="divider"></div>
+        <h3 style="margin-left: 18px; margin-bottom: 0; padding-bottom: 0;">Cosa posso fare?</h3>
+        <p id="cosaLbl">In zona arancione è possibile circolare all'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne. I negozi rimangono aperti</p>
+
+        <p style="margin-top: 50px;"></p>
+        
+        <a style="margin-top: 50px; margin-left: 24px; padding-bottom: 5px; margin-bottom: 5px;" href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=http%3A%2F%2Fniccolosegato.me%2Fcoloregioni&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
+        <p style="margin-left: 18px; font-size: 12px; padding-bottom: 0; margin-bottom: 0;">Google Play e Google Play logo sono marchi registrati di Google LLC.</p>
+        <p style="margin-top: 0; font-size: 12px; margin-left: 18px; padding-top: 0;">© Niccolò Segato 2021 - Tutti i diritti riservati</p>
+    </body>
+</html>
