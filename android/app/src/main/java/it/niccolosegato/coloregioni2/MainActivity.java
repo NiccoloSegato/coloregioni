@@ -1,5 +1,6 @@
 package it.niccolosegato.coloregioni2;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -45,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
     protected TextView textView2;
 
     ProgressDialog dialog;
+
+    @Override public void onBackPressed() {
+        finishAffinity();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,8 +4,8 @@
     <string name="cosaG">In zona gialla è possibile circolare all\'interno della propria regione senza limitazioni.\nLe attività commerciali, compresi bar e ristoranti sono aperti.\nC\'è il divieto di circolazione tra le 22 e le 5.\nNon è possibile uscire dalla propria regione.</string>
     <string name="cosaA">In zona arancione è possibile circolare all\'interno del proprio comune senza limitazioni, ma non è possibile uscire da esso. I bar e i ristoranti sono chiusi, con la possibilità di fare asporto e consegne.\nI negozi rimangono aperti.</string>
     <string name="cosaR">In zona rossa non è consentito circolare, nemmeno all\'interno del proprio comune.\nNegozi, bar e ristoranti sono chiusi. Questi ultimi hanno la possibilità di fare asporto e consegne a domicilio.</string>
-    <string name="cosaE">In aggiornamento...</string>
+    <string name="cosaE">In zona bianca è possibile circolare liberamente senza coprifuoco, possono riaprire palestre e piscine ma anche teatri, cinema, sale da concerto. Bar e ristoranti, inoltre, hanno l\'opportunità di accogliere i clienti anche alla sera</string>
     <string name="amiciG">È possibile andare a visitare, una sola volta al giorno e al massimo in due, amici e parenti nella propria regione.</string>
     <string name="amiciA">È possibile andare a visitare, una sola volta al giorno e al massimo in due, amici e parenti nel proprio comune.</string>
-    <string name="amiciE">In aggiornamento...</string>
+    <string name="amiciE">Si, è possibile visitare amici e parenti</string>
 </resources>
