@@ -1,4 +1,4 @@
-package it.niccolosegato.coloregioni;
+package it.niccolosegato.coloregioni2;
 
 import androidx.appcompat.app.AppCompatActivity;
 

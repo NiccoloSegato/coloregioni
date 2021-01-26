@@ -1,4 +1,4 @@
-package it.niccolosegato.coloregioni;
+package it.niccolosegato.coloregioni2;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -35,7 +35,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-import it.niccolosegato.coloregioni.R;
+import it.niccolosegato.coloregioni2.R;
 
 public class BackgroundWorker extends AsyncTask {
 

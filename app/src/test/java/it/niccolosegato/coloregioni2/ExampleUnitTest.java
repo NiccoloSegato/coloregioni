@@ -1,4 +1,4 @@
-package it.niccolosegato.coloregioni;
+package it.niccolosegato.2;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package it.niccolosegato.coloregioni;
+package it.niccolosegato.coloregioni2;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("it.niccolosegato.coloregioni", appContext.getPackageName());
+        assertEquals("it.niccolosegato.coloregioni2", appContext.getPackageName());
     }
 }
