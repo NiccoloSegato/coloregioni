@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Coloregioni">
-        <activity android:name=".RegionActivity"></activity>
+        <activity android:name=".RegionActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
         </activity>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6620343870941775~7677662934"/>
+            android:value="ca-app-pub-6620343870941775~2464148093"/>
 
     </application>
 
