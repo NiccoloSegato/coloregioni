@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "677902312157",
+    "firebase_url": "https://coloregioni-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "coloregioni",
+    "storage_bucket": "coloregioni.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677902312157:android:5bcaedf3f2747e2ef7f134",
+        "android_client_info": {
+          "package_name": "it.niccolosegato.coloregioni2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "677902312157-pd1q5p1ksc4o1shr5mfd4alel7cfe7bk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY9rFeCva-vnxAwr9IkqXkZXculE5n2Z4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "677902312157-pd1q5p1ksc4o1shr5mfd4alel7cfe7bk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
