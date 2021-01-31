@@ -1,16 +1,13 @@
 package it.niccolosegato.coloregioni2;
 
-import androidx.activity.OnBackPressedCallback;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -18,20 +15,6 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.util.prefs.Preferences;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     protected TextView subPar;
     protected TextView textView;
     protected TextView textView2;
+    /*protected TextView dataPrev;
+    protected TextView zonaPrev;
+    protected CardView viewPrev;*/
 
     ProgressDialog dialog;
 
@@ -61,11 +47,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("coloregioni", 0); // 0 - for private mode
         String regionePref = pref.getString("REGIONE", "Abruzzo");
 
-        AdView mAdView = findViewById(R.id.adView);
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
         regioneBtn = (Button) findViewById(R.id.regione);
         dwnBtn = (Button) findViewById(R.id.dwn);
         faqBtn = (Button) findViewById(R.id.faq);
@@ -75,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
         subPar = (TextView) findViewById(R.id.subCosa);
         textView = (TextView) findViewById(R.id.textView);
         textView2 = (TextView) findViewById(R.id.textView2);
+        /*dataPrev = (TextView) findViewById(R.id.dataPrev);
+        zonaPrev = (TextView) findViewById(R.id.zonaPrev);
+        viewPrev = (CardView) findViewById(R.id.viewPrev);*/
+
+        //viewPrev.setVisibility(View.INVISIBLE);
+
         regioneBtn.setText(regionePref);
 
         regioneBtn.setOnClickListener(v -> {
@@ -92,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(browserIntent);
         });
 
-
         changeColor(regionePref);
     }
 
@@ -100,5 +86,6 @@ public class MainActivity extends AppCompatActivity {
         dialog = ProgressDialog.show(this, "Attendi un attimo", "Sto scaricando i dati più aggiornati...");
         subText.setText(regione);
         new BackgroundWorker(this, mainText, mainView, subText, dialog, subPar, textView, textView2).execute(regione);
+        //new PrevBackgroundWorker(this, zonaPrev, dataPrev, viewPrev).execute(regione);
     }
 }

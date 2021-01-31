@@ -8,11 +8,6 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.Button;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-
-import java.util.prefs.Preferences;
-
 public class RegionActivity extends AppCompatActivity {
 
     protected Button abruzzo;
